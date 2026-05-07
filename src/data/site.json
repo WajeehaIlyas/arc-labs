@@ -1,0 +1,29 @@
+{
+  "lab": {
+    "name": "ARC Lab",
+    "fullName": "Autonomous Robotics & Control Lab",
+    "university": "Information Technology University",
+    "department": "Department of Computer Science",
+    "logo": "/assets/logo.png",
+    "email": "arclab@.itu.edu.pk",
+    "address": null,
+    "description": "We develop theories, algorithms, and tools for the design and analysis of autonomous, reliable, and cyber-physical systems. Our research spans formal methods, machine learning, and control theory.",
+    "objective": "The ARC Lab focuses on building rigorous foundations for safe and reliable autonomous systems. We combine formal verification, machine learning, and control theory to tackle hard open problems in cyber-physical systems, robotics, and intelligent infrastructure.",
+    "joinText": "We are always looking for motivated students and research assistants to join our team. If you are passionate about formal methods or autonomous systems, we'd love to hear from you.",
+    "applyEmail": "arclab@itu.edu.pk"
+  },
+  "nav": [
+    { "label": "Home", "path": "/" },
+    { "label": "Research", "path": "/research" },
+    { "label": "Publications", "path": "/publications" },
+    { "label": "Tools & Models", "path": "/tools" },
+    { "label": "Team", "path": "/team" }
+  ],
+  "news": [
+    {
+      "id": null,
+      "date": null,
+      "text": null
+    }
+  ]
+}

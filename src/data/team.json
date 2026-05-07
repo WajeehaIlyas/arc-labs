@@ -1,0 +1,124 @@
+{
+  "pi": {
+    "name": "Dr. Usama Mehmood",
+    "title": "null",
+    "role": "null",
+    "bio": "Prof. Director leads the ARC Lab and holds an associate professorship in the Department of Computer Science. His research interests include formal methods, autonomous robotics and control theory.",
+    "email": "usamamehmood@itu.edu.pk",
+    "photo": "/assets/team/director.jpg",
+    "website": "#",
+    "googleScholar": "#",
+    "interests": ["Formal Methods", "Control Theory", "Robotics"]
+  },
+  "members": [
+    {
+      "id": "m1",
+      "name": "Asim Masood",
+      "role": "Research Assistant",
+      "photo": "/assets/team/asim.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2025,
+      "website": "null"
+    },
+    {
+      "id": "m2",
+      "name": "Mubashir Haroon",
+      "role": "Research Assistant",
+      "photo": "/assets/team/mubashir.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2025,
+      "website": "null"
+    },
+    {
+      "id": "m3",
+      "name": "Tayyab Ur Rehman",
+      "role": "Research Assistant",
+      "photo": "/assets/team/tayyab.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2025,
+      "website": "null"
+    },
+    {
+      "id": "m4",
+      "name": "Amna Amir",
+      "role": "Research Assistant",
+      "photo": "/assets/team/amna.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2025,
+      "website": "null"
+    },
+    {
+      "id": "m5",
+      "name": "Abdul Moqeet",
+      "role": "Research Assistant",
+      "photo": "/assets/team/moqeet.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2025,
+      "website": "null"
+    },
+    {
+      "id": "m6",
+      "name": "Wajeeha Ilyas",
+      "role": "Research Assistant",
+      "photo": "/assets/team/wajeeha.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2025,
+      "website": "null"
+    },
+    {
+      "id": "m7",
+      "name": "Syed Muhammad Murtaza Kazmi",
+      "role": "Research Assistant",
+      "photo": "/assets/team/murtaza.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2025,
+      "website": "null"
+    },
+    {
+      "id": "m8",
+      "name": "Muhammad Mukees Khan",
+      "role": "Research Assistant",
+      "photo": "/assets/team/mukees.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2025,
+      "website": "null"
+    },
+    {
+      "id": "m9",
+      "name": "Muhammad Usman Muneer",
+      "role": "Research Assistant",
+      "photo": "/assets/team/usman.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2025,
+      "website": "null"
+    }
+  ],
+  "alumni": [
+    {
+      "id": "a1",
+      "name": "Hamza Ali",
+      "role": "PhD",
+      "year": 2024,
+      "thesisTitle": null,
+      "currentPosition": null
+    }
+  ]
+}

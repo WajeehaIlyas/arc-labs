@@ -1,0 +1,65 @@
+{
+  "tags": [
+    "All",
+    "Model Predictive Control",
+    "Multi Robot Systems",
+    "Safety Critical Systems",
+    "Verification",
+    "Control Theory",
+    "Autonomous Systems"
+  ],
+  "projects": [
+    {
+      "id": "p1",
+      "title": "Driver Behavior Modelling using Model Predictive Control",
+      "status": "ongoing",
+      "tags": ["Machine Learning", "Autonomous Systems", "Verification"],
+      "description": "We develop formal safety guarantees for reinforcement learning agents operating in safety-critical environments. Our approach combines Lyapunov-based control barrier functions with deep RL to ensure constraint satisfaction during both training and deployment.",
+      "image": "/assets/projects/p1.gif",
+      "collaborators": ["MIT CSAIL", "Toyota Research Institute"],
+      "funding": "NSF Award #2134567",
+      "startYear": 2023,
+      "endYear": null,
+      "publications": ["pub1", "pub3"]
+    },
+    {
+      "id": "p2",
+      "title": "Modelling Agressiveness in Driver Behavior using Black Box Simplex Architecture ",
+      "status": "ongoing",
+      "tags": ["Autonomous Systems", "Model Predictive Control", "Safety Critical Systems"],
+      "description": "This project models driver aggressiveness using Black-Box Simplex architecture to develop a reactive, behavior-tunable, and safety-aware driver model for autonomous vehicle testing. The ego vehicle is governed by two MPC-based controllers: an advanced controller designed to achieve a target speed, and a baseline safety controller that ensures that the vehicle comes to a complete stop within a specified horizon, enabling effective multi-objective control.",
+      "image": "/assets/projects/AV.gif",
+      "collaborators":null,
+      "funding": null,
+      "startYear": 2025,
+      "endYear": null,
+      "publications": null
+    },
+    {
+      "id": "p3",
+      "title": "Safe Navigation of Multi-robot Sytstem using Runtime Assurance",
+      "status": "ongoing",
+      "tags": ["Multi Robot Systems", "Autonomous Systems"],
+      "description": "The Multi-Robot BSA System is a multi-agent robotic coordination framework where multiple autonomous robots operate in a shared environment through continuous motion planning, real-time trajectory optimization, and collision avoidance. Each robot dynamically computes feasible paths under environmental constraints while adapting to the motion of other agents.",
+      "image": "/assets/projects/bsa.gif",
+      "collaborators": null,
+      "funding": null,
+      "startYear": 2025,
+      "endYear": null,
+      "publications": null
+    },
+    {
+      "id": "p4",
+      "title": "Behavior-Based Traffic Simulation using Model Predictive Control",
+      "status": "ongoing",
+      "tags": ["Model Predictive Control", "Autonomous Systems"],
+      "description": "Autonomous Traffic Simulation System is a multi-agent traffic simulation framework where each vehicle independently plans its trajectory in real time using Model Predictive Control (MPC), solving a constrained nonlinear optimization problem at every timestep. Vehicles exhibit realistic driving behaviors including lane-following and overtaking, while actively avoiding collisions with neighboring agents.",
+      "image": "/assets/projects/traffic_sim.gif",
+      "collaborators": [],
+      "funding": null,
+      "startYear": 2025,
+      "endYear": null,
+      "publications": null
+    }
+  ]
+}

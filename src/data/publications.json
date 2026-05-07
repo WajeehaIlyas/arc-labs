@@ -1,0 +1,16 @@
+{
+  "publications": [
+    {
+      "id": "pub1",
+      "title": "Safe Deep Reinforcement Learning via Control Barrier Functions",
+      "authors": ["null", "null"],
+      "venue": null,
+      "year": 2025,
+      "type": "conference",
+      "tags": ["Machine Learning", "Autonomous Systems"],
+      "pdf": "/assets/papers/pub1.pdf",
+      "doi": "10.5555/example.2025.001",
+      "abstract": "We propose a framework combining control barrier functions with deep RL to enforce safety constraints during policy learning. Our approach provides theoretical guarantees while achieving competitive task performance."
+    }
+  ]
+}
