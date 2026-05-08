@@ -13,14 +13,14 @@
       "id": "p1",
       "title": "Driver Behavior Modelling using Model Predictive Control",
       "status": "ongoing",
-      "tags": ["Machine Learning", "Autonomous Systems", "Verification"],
-      "description": "We develop formal safety guarantees for reinforcement learning agents operating in safety-critical environments. Our approach combines Lyapunov-based control barrier functions with deep RL to ensure constraint satisfaction during both training and deployment.",
-      "image": "/assets/projects/p1.gif",
-      "collaborators": ["MIT CSAIL", "Toyota Research Institute"],
-      "funding": "NSF Award #2134567",
-      "startYear": 2023,
+      "tags": ["Model Predictive Control", "Imitation Learning"],
+      "description": " Final Year Project on driver behavior modeling using Model Predictive Control (MPC) and imitation learning. The system learns driving behavior parameters from real traffic trajectories and reproduces expert like vehicle motion in simulation. We evaluated the approach on real-world traffic datasets including the highD Dataset and pNEUMA Vision to model vehicle behavior in traffic scenarios.",
+      "image": "/assets/projects/imitation.gif",
+      "collaborators": null,
+      "funding": null,
+      "startYear": 2025,
       "endYear": null,
-      "publications": ["pub1", "pub3"]
+      "publications":null
     },
     {
       "id": "p2",
