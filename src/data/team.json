@@ -109,14 +109,58 @@
       "interests": [null],
       "year": 2025,
       "website": "null"
+    },
+    {
+      "id": "m10",
+      "name": "Anoosha Hussain",
+      "role": "Research Assistant",
+      "photo": "/assets/team/anoosha.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2024,
+      "website": "null"
+    },
+    {
+      "id": "m11",
+      "name": "Ahmad Bin Nisar",
+      "role": "Research Assistant",
+      "photo": "/assets/team/ahmad.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2024,
+      "website": "null"
+    },
+    {
+      "id": "m12",
+      "name": "Sumaira Gulfam",
+      "role": "Research Assistant",
+      "photo": "/assets/team/sumaira.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2025,
+      "website": "null"
+    },
+    {
+      "id": "m13",
+      "name": "Syed Saad Bin Shariq",
+      "role": "Research Assistant",
+      "photo": "/assets/team/saad.jpg",
+      "bio": null,
+      "email": null,
+      "interests": [null],
+      "year": 2025,
+      "website": "null"
     }
   ],
   "alumni": [
     {
       "id": "a1",
-      "name": "Hamza Ali",
-      "role": "PhD",
-      "year": 2024,
+      "name": null,
+      "role": null,
+      "year": null,
       "thesisTitle": null,
       "currentPosition": null
     }
