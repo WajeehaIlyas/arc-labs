@@ -1,26 +1,4 @@
 {
-  "tools": [
-    {
-      "id": "t1",
-      "name": "ARCNN",
-      "subtitle": "Neural Network Verification via Abstract Interpretation",
-      "description": "ARCNN is an open-source tool for formally verifying robustness properties of deep neural networks. It uses abstract interpretation to compute certified bounds on network outputs, supporting a wide range of network architectures and activation functions.",
-      "image": "/assets/tools/arcnn.png",
-      "tags": ["Verification", "Machine Learning"],
-      "github": "https://github.com/arc-lab/arcnn",
-      "paper": "pub4",
-      "version": "v1.3.0",
-      "language": "Python",
-      "license": "MIT"
-    }
-  ],
-  "benchmarks": [
-    {
-      "id": "b1",
-      "name": "CPS Verification Benchmark Suite",
-      "description": "A curated set of hybrid system verification benchmarks spanning automotive, avionics, and medical device domains. Includes both safety and liveness properties.",
-      "link": "https://github.com/arc-lab/cps-benchmarks",
-      "paper": "pub9"
-    }
-  ]
+  "tools": [],
+  "benchmarks": []
 }

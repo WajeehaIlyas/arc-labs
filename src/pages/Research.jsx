@@ -3,11 +3,29 @@ import researchData from "../data/research.json";
 
 export default function Research() {
   const { tags, projects } = researchData;
-  const [activeTag, setActiveTag] = useState("All");
+  const [selectedTags, setSelectedTags] = useState([]);
   const [activeStatus, setActiveStatus] = useState("all");
+  const [lightbox, setLightbox] = useState(null); // holds image src when open
+
+  const toggleTag = (tag) => {
+    if (tag === "All") {
+      setSelectedTags([]);
+      return;
+    }
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+    );
+  };
+
+  const isTagActive = (tag) => {
+    if (tag === "All") return selectedTags.length === 0;
+    return selectedTags.includes(tag);
+  };
 
   const filtered = projects.filter((p) => {
-    const tagMatch = activeTag === "All" || p.tags.includes(activeTag);
+    const tagMatch =
+      selectedTags.length === 0 ||
+      selectedTags.some((t) => p.tags.includes(t));
     const statusMatch = activeStatus === "all" || p.status === activeStatus;
     return tagMatch && statusMatch;
   });
@@ -17,6 +35,24 @@ export default function Research() {
 
   return (
     <div className="page">
+      {/* Lightbox */}
+      {lightbox && (
+        <div className="lightbox-overlay" onClick={() => setLightbox(null)}>
+          <div className="lightbox-box" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={() => setLightbox(null)}>✕</button>
+            {lightbox.endsWith(".html") ? (
+              <iframe
+                src={lightbox}
+                className="lightbox-iframe"
+                title="Project preview"
+              />
+            ) : (
+              <img src={lightbox} alt="Project preview" className="lightbox-img" />
+            )}
+          </div>
+        </div>
+      )}
+
       <div className="container">
         <h1 className="page-title">Research</h1>
 
@@ -25,13 +61,29 @@ export default function Research() {
           {tags.map((tag) => (
             <button
               key={tag}
-              className={`tag-btn${activeTag === tag ? " tag-btn-active" : ""}`}
-              onClick={() => setActiveTag(tag)}
+              className={`tag-btn${isTagActive(tag) ? " tag-btn-active" : ""}`}
+              onClick={() => toggleTag(tag)}
             >
               {tag}
             </button>
           ))}
         </div>
+
+        {selectedTags.length > 0 && (
+          <p className="tag-hint">
+            Showing projects matching{" "}
+            {selectedTags.map((t, i) => (
+              <span key={t}>
+                <strong>{t}</strong>
+                {i < selectedTags.length - 1 ? " + " : ""}
+              </span>
+            ))}
+            {" · "}
+            <button className="btn-link small" onClick={() => setSelectedTags([])}>
+              Clear
+            </button>
+          </p>
+        )}
 
         {/* Status Toggle */}
         <div className="status-toggle">
@@ -53,7 +105,9 @@ export default function Research() {
               <span className="status-dot status-dot-ongoing" /> Ongoing Projects
             </h2>
             <div className="projects-list">
-              {ongoing.map((p) => <ProjectCard key={p.id} project={p} />)}
+              {ongoing.map((p) => (
+                <ProjectCard key={p.id} project={p} onImageClick={setLightbox} />
+              ))}
             </div>
           </section>
         )}
@@ -65,7 +119,9 @@ export default function Research() {
               <span className="status-dot status-dot-completed" /> Completed Projects
             </h2>
             <div className="projects-list">
-              {completed.map((p) => <ProjectCard key={p.id} project={p} />)}
+              {completed.map((p) => (
+                <ProjectCard key={p.id} project={p} onImageClick={setLightbox} />
+              ))}
             </div>
           </section>
         )}
@@ -78,8 +134,9 @@ export default function Research() {
   );
 }
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, onImageClick }) {
   const [expanded, setExpanded] = useState(false);
+
   return (
     <div className="project-card">
       <div className="project-card-main">
@@ -110,14 +167,38 @@ function ProjectCard({ project }) {
             {expanded ? "Show less ↑" : "Read more ↓"}
           </button>
         </div>
+
         {project.image && (
           <div className="project-image-wrap">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="project-image"
-              onError={(e) => { e.target.style.display = "none"; }}
-            />
+            {project.image.endsWith(".html") ? (
+              <button
+                className="project-image-btn"
+                onClick={() => onImageClick(project.image)}
+                title="Click to expand"
+              >
+                <iframe
+                  src={project.image}
+                  className="project-image project-iframe"
+                  title={project.title}
+                  scrolling="no"
+                />
+                <span className="project-image-hint">🔍</span>
+              </button>
+            ) : (
+              <button
+                className="project-image-btn"
+                onClick={() => onImageClick(project.image)}
+                title="Click to enlarge"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="project-image"
+                  onError={(e) => { e.target.parentElement.style.display = "none"; }}
+                />
+                <span className="project-image-hint">🔍</span>
+              </button>
+            )}
           </div>
         )}
       </div>

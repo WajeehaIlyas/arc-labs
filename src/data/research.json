@@ -60,19 +60,6 @@
       "startYear": 2025,
       "endYear": null,
       "publications": null
-    },
-    {
-      "id": "p5",
-      "title": "Driver Behavior Analysis using Urban Traffic Data",
-      "status": "ongoing",
-      "tags": ["Autonomous Systems"],
-      "description": "This project focuses on analyzing driver behavior using the pNEUMA urban traffic dataset and drone-based vehicle trajectory data. The study examines real-world driving patterns through metrics such as speed, acceleration, braking behavior, and interactions between surrounding vehicles. By combining trajectory analysis with computer vision-based vehicle tracking, the project aims to contribute to intelligent traffic monitoring, urban mobility research, and data-driven transportation analysis.",  
-      "image": "/assets/projects/p5.html",
-      "collaborators": [],
-      "funding": null,
-      "startYear": 2024,
-      "endYear": null,
-      "publications": null
     }
   ]
 }
