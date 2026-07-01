@@ -71,7 +71,7 @@
       "title": "Driver Behavior Analysis using Urban Traffic Data",
       "status": "ongoing",
       "tags": ["Autonomous Systems"],
-      "description": "This project focuses on analyzing driver behavior using the [pNEUMA](https://open-traffic.epfl.ch/) urban traffic dataset and drone-based vehicle trajectory data. The study examines real-world driving patterns through metrics such as speed, acceleration, braking behavior, and interactions between surrounding vehicles. By combining trajectory analysis with computer vision-based vehicle tracking, the project aims to contribute to intelligent traffic monitoring, urban mobility research, and data-driven transportation analysis.",  
+      "description": "This project focuses on analyzing driver behavior using the [pNEUMA](https://open-traffic.epfl.ch/) urban traffic dataset and drone-based vehicle trajectory data. The study examines real-world driving patterns through metrics such as speed, acceleration, braking behavior, and interactions between surrounding vehicles. By combining trajectory analysis with computer vision-based vehicle tracking, the project aims to contribute to intelligent traffic monitoring, urban mobility research, and data-driven transportation analysis.",
       "image": "/assets/projects/DBM.png",
       "caption": "Driver behavior analysis from the pNEUMA urban traffic dataset — the same vehicle seen by multiple drones is identified across their overlapping fields of view and registered into a single, continuous trajectory.",
       "collaborators": [],

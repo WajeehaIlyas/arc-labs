@@ -180,7 +180,6 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   font-size: 30px;
   font-weight: 300;
   color: var(--text);
-  margin-bottom: 8px;
   letter-spacing: -0.02em;
   border-bottom: 1px solid var(--border);
   padding-bottom: 16px;
@@ -332,7 +331,6 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   line-height: 1.6;
 }
 
-/* Join section */
 .home-join { background: transparent; }
 
 .btn-primary {
@@ -369,7 +367,6 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
 }
 
 .btn-link:hover { text-decoration: underline; }
-
 .btn-link.small { font-size: 13px; }
 
 .btn-outline {
@@ -429,6 +426,13 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   color: #fff;
 }
 
+.tag-hint {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  margin-top: -8px;
+}
+
 .status-toggle {
   display: flex;
   gap: 0;
@@ -450,7 +454,6 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
 }
 
 .status-btn:last-child { border-right: none; }
-
 .status-btn:hover { background: var(--bg-alt); }
 
 .status-btn-active {
@@ -575,9 +578,51 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
 
 .project-meta strong { color: var(--text-muted); font-weight: 500; }
 
+/* ==============================
+   PROJECT MEDIA (image / gif / html)
+   — outer wrap owns border + radius
+   — button and media inside have no radius
+   ============================== */
+
+/* Replace the entire PROJECT MEDIA section in index.css with this */
+
 .project-image-wrap {
   flex-shrink: 0;
   width: 320px;
+  height: 280px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000;          /* fills any gaps if iframe has transparent bg */
+  display: flex;
+  align-items: stretch;
+}
+
+.project-image-btn {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: zoom-in;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.project-image,
+.project-iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .project-image {
@@ -777,6 +822,96 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   .lightbox-close { top: -10px; right: -10px; }
 }
 
+.project-iframe {
+  pointer-events: none;
+}
+
+.project-image-btn:hover .project-image,
+.project-image-btn:hover .project-iframe {
+  opacity: 0.88;
+  transition: opacity 0.15s;
+}
+
+.project-image-hint {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.project-image-btn:hover .project-image-hint {
+  opacity: 1;
+}
+
+/* ==============================
+   LIGHTBOX
+   ============================== */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: zoom-out;
+}
+
+.lightbox-box {
+  position: relative;
+  cursor: default;
+}
+
+.lightbox-img {
+  display: block;
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  object-fit: contain;
+}
+
+.lightbox-iframe {
+  display: block;
+  width: 80vw;
+  height: 75vh;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  background: #fff;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--text);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  line-height: 1;
+  z-index: 1;
+}
+
+.lightbox-close:hover { background: var(--bg-alt); }
+
 /* ==============================
    PUBLICATIONS
    ============================== */
@@ -803,7 +938,6 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
 }
 
 .pub-sections { display: flex; flex-direction: column; gap: 0; }
-
 .pub-year-section { margin-bottom: 32px; }
 
 .pub-year-heading {
@@ -844,15 +978,8 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   white-space: nowrap;
 }
 
-.pub-type-journal {
-  background: #e8f4f8;
-  color: #1a5276;
-}
-
-.pub-type-conf {
-  background: #fef9e7;
-  color: #7d6608;
-}
+.pub-type-journal { background: #e8f4f8; color: #1a5276; }
+.pub-type-conf    { background: #fef9e7; color: #7d6608; }
 
 .pub-entry-body { flex: 1; }
 
@@ -971,11 +1098,7 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   margin-bottom: 8px;
 }
 
-.tool-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
+.tool-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 
 .tool-desc {
   font-size: 14px;
@@ -1007,20 +1130,11 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   margin-bottom: 14px;
 }
 
-.tool-meta {
-  font-size: 12.5px;
-  color: var(--text-light);
-}
-
+.tool-meta { font-size: 12.5px; color: var(--text-light); }
 .tool-meta strong { color: var(--text-muted); font-weight: 500; }
-
 .tool-actions { display: flex; gap: 10px; }
 
-.benchmark-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
+.benchmark-list { display: flex; flex-direction: column; gap: 0; }
 
 .benchmark-entry {
   display: flex;
@@ -1032,7 +1146,6 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
 }
 
 .benchmark-entry:first-child { border-top: 1px solid var(--border-light); }
-
 .benchmark-info { flex: 1; }
 
 .benchmark-name {
@@ -1065,10 +1178,7 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   align-items: flex-start;
 }
 
-.pi-photo-wrap, .member-photo-wrap {
-  flex-shrink: 0;
-}
-
+.pi-photo-wrap, .member-photo-wrap { flex-shrink: 0; }
 .pi-info { flex: 1; }
 
 .member-photo {
@@ -1157,11 +1267,7 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   margin-bottom: 10px;
 }
 
-.member-links {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
+.member-links { display: flex; gap: 12px; flex-wrap: wrap; }
 
 .members-grid {
   display: grid;
@@ -1180,12 +1286,7 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
 }
 
 .member-card-info { display: flex; flex-direction: column; gap: 2px; }
-
-.alumni-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
+.alumni-list { display: flex; flex-direction: column; gap: 0; }
 
 .alumni-entry {
   display: flex;
@@ -1212,10 +1313,7 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   font-family: var(--font-serif);
 }
 
-.alumni-role {
-  font-size: 12.5px;
-  color: var(--text-light);
-}
+.alumni-role { font-size: 12.5px; color: var(--text-light); }
 
 .alumni-right {
   flex: 1;
@@ -1230,10 +1328,7 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   font-style: italic;
 }
 
-.alumni-now {
-  font-size: 13px;
-  color: var(--ongoing);
-}
+.alumni-now { font-size: 13px; color: var(--ongoing); }
 
 /* ==============================
    FOOTER
@@ -1249,18 +1344,13 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
 .footer-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 28px 32px;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 40px;
-  padding-bottom: 32px;
 }
 
-.footer-col {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
+.footer-col { display: flex; flex-direction: column; gap: 5px; }
 
 .footer-lab-name {
   font-family: var(--font-serif);
@@ -1270,16 +1360,8 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   margin-bottom: 2px;
 }
 
-.footer-lab-full {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-.footer-dept, .footer-uni {
-  font-size: 12.5px;
-  color: var(--text-light);
-}
+.footer-lab-full { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+.footer-dept, .footer-uni { font-size: 12.5px; color: var(--text-light); }
 
 .footer-section-label {
   font-size: 11.5px;
@@ -1290,18 +1372,9 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
   margin-bottom: 6px;
 }
 
-.footer-link {
-  font-size: 13px;
-  color: var(--accent);
-  text-decoration: none;
-}
-
+.footer-link { font-size: 13px; color: var(--accent); text-decoration: none; }
 .footer-link:hover { text-decoration: underline; }
-
-.footer-address {
-  font-size: 12.5px;
-  color: var(--text-light);
-}
+.footer-address { font-size: 12.5px; color: var(--text-light); }
 
 .footer-nav-btn {
   font-size: 13px;
@@ -1418,28 +1491,21 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; backgroun
 
   .navbar-inner { padding: 0 16px; }
   .container { padding: 0 16px; }
-
   .navbar-nav { gap: 0; }
   .nav-link { padding: 5px 8px; font-size: 13px; }
-
   .brand-sub { display: none; }
 
   .home-hero { padding: 36px 0 32px; }
   .home-title { font-size: 22px; }
 
   .project-card-main { flex-direction: column; }
-  .project-image-wrap { width: 100%; }
-  .project-image { width: 100%; height: 160px; }
+  .project-image-wrap { width: 100%; height: 220px; }
 
   .pi-card { flex-direction: column; }
   .members-grid { grid-template-columns: 1fr; }
-
   .footer-inner { grid-template-columns: 1fr; gap: 24px; }
-
   .pub-entry { flex-direction: column; gap: 8px; }
-
   .benchmark-entry { flex-direction: column; }
-
   .alumni-entry { flex-direction: column; gap: 4px; }
   .alumni-left { min-width: unset; }
 
