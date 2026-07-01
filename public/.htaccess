@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------------------
+# Static hosting config for the ARC Lab / personal site (Apache / LiteSpeed).
+#
+# This file is in public/, so Vite copies it to the ROOT of every build
+# (dist/ and dist-personal/). On Hostinger it is read automatically — the
+# admin does not need to configure anything.
+# ---------------------------------------------------------------------------
+
+# --- Single-page-app routing ------------------------------------------------
+# The site does its own navigation in JavaScript. Without this rule, opening a
+# deep link directly (e.g. /publications) would return a 404, because no file
+# exists at that path. This sends any request that is NOT a real file/folder
+# to index.html, and the app then renders the right page.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # If the request is a real file or directory, serve it as-is.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  # Otherwise, hand off to the app entry point.
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# --- Caching ----------------------------------------------------------------
+# Vite fingerprints asset filenames (e.g. index-ABC123.js), so those can be
+# cached hard. index.html must NOT be cached, or visitors keep seeing an old
+# build after an update.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Hashed build assets: cache for a year.
+  <FilesMatch "\.(js|css|woff2?|ttf|eot|svg|png|jpe?g|gif|webp|avif|ico)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # HTML entry point: always revalidate.
+  <FilesMatch "\.html$">
+    ExpiresDefault "access plus 0 seconds"
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+# --- Compression ------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
