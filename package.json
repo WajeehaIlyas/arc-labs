@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:personal": "VITE_SITE=personal vite",
+    "build:personal": "VITE_SITE=personal vite build --outDir dist-personal",
+    "preview:personal": "VITE_SITE=personal vite preview --outDir dist-personal"
   },
   "dependencies": {
     "react": "^18.3.1",

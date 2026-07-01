@@ -1,0 +1,25 @@
+{
+  "tools": [
+    {
+      "id": "t2",
+      "name": "MPC-Tune",
+      "subtitle": "Automatic MPC Weight Tuning via Expectation Maximisation",
+      "description": "MPC-Tune fine-tunes the cost-function weights of a Model Predictive Controller using Expectation-Maximisation-based probabilistic policy search. A user-defined reward over the MPC trajectory guides the search: at each iteration a population of weight vectors is sampled from a Gaussian policy, the MPC is rolled out for each, and the policy is re-fit toward the best-performing samples.",
+      "image": "/assets/tools/mpc-tune.png",
+      "tags": ["Control Theory", "Machine Learning", "Autonomous Vehicles"],
+      "github": "https://github.com/arclab-itu/MPC-Tune",
+      "repo": "arclab-itu/MPC-Tune",
+      "language": "Python",
+      "license": "MIT"
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "b1",
+      "name": "CPS Verification Benchmark Suite",
+      "description": "A curated set of hybrid system verification benchmarks spanning automotive, avionics, and medical device domains. Includes both safety and liveness properties.",
+      "link": "https://github.com/arc-lab/cps-benchmarks",
+      "paper": "pub9"
+    }
+  ]
+}

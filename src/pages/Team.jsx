@@ -1,4 +1,4 @@
-import teamData from "../data/team.json";
+import teamData from "../data/lab/team.json";
 
 export default function Team() {
   const { pi, members, alumni } = teamData;
@@ -20,13 +20,27 @@ export default function Team() {
             </div>
             <div className="pi-info">
               <h3 className="member-name">{pi.name}</h3>
-              <span className="member-role">{pi.role}</span>
+              <div className="pi-contact-line">
+                {pi.cv && pi.cv !== "#" && (
+                  <a href={pi.cv} className="pub-action-link" target="_blank" rel="noreferrer">CV</a>
+                )}
+                {pi.cv && pi.cv !== "#" && <span className="pi-sep">|</span>}
+                <span>Email: <a href={`mailto:${pi.email}`} className="pub-action-link">{pi.email}</a></span>
+              </div>
+              {pi.degrees?.length > 0 && (
+                <ul className="pi-degrees">
+                  {pi.degrees.map((d, idx) => (
+                    <li key={idx} className="pi-degree">
+                      {d.degree} – {d.institution}, {d.year}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <p className="member-bio">{pi.bio}</p>
               <div className="member-interests">
                 {pi.interests.map(i => <span key={i} className="project-tag">{i}</span>)}
               </div>
               <div className="member-links">
-                <a href={`mailto:${pi.email}`} className="pub-action-link">{pi.email}</a>
                 {pi.website && pi.website !== "#" && (
                   <a href={pi.website} className="pub-action-link" target="_blank" rel="noreferrer">Website</a>
                 )}

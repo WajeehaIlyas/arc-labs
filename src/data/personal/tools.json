@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "id": "t1",
+      "name": "Cuboid Fit (RANSAC)",
+      "subtitle": "Robust cuboid fitting in 3D point clouds",
+      "description": "A RANSAC-based algorithm that fits the best-matching cuboid to a set of 3D points, automatically separating inliers (points on the cuboid surface) from outliers. The main function CuboidRANSAC returns the fitted model — center coordinates, dimensions, and orientation (roll, pitch, yaw) — and the result terminates once 90% of points are classified as inliers or after 1,000 iterations. Sample data and a runme.m script are included for immediate testing, and both the point cloud and fitted cuboid are visualized.",
+      "image": "/assets/tools/cuboid-ransac.jpg",
+      "tags": ["Point Cloud", "RANSAC", "3D Geometry", "MATLAB"],
+      "github": "https://github.com/usamamehmood3/Cuboid-Fitting-RanSAC",
+      "repo": "usamamehmood3/Cuboid-Fitting-RanSAC",
+      "fileExchange": "https://www.mathworks.com/matlabcentral/fileexchange/65168-cuboid-fit-ransac",
+      "version": "1.0.4.5",
+      "language": "MATLAB",
+      "license": "BSD"
+    }
+  ],
+  "benchmarks": []
+}

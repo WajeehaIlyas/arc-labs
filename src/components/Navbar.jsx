@@ -1,28 +1,23 @@
-export default function Navbar({ currentPage, navigate, lab, nav }) {
-  const pageMap = {
-    "/": "home",
-    "/research": "research",
-    "/publications": "publications",
-    "/tools": "tools",
-    "/team": "team",
-  };
+// Derive a page key from a nav path: "/" -> "home", "/research" -> "research".
+export const pathToPage = (path) => (path === "/" ? "home" : path.replace(/^\//, ""));
 
+export default function Navbar({ currentPage, navigate, brand, nav }) {
   return (
     <header className="navbar">
       <div className="navbar-inner">
         <button className="navbar-brand" onClick={() => navigate("home")}>
           <span className="brand-logo-slot">
-            {/* Replace with <img src="/assets/logo.png" alt="ARC Lab Logo" className="brand-logo-img" /> when logo is ready */}
-            <span className="brand-logo-placeholder">ARC</span>
+            {/* Replace with <img src="/assets/logo.png" alt="Logo" className="brand-logo-img" /> when logo is ready */}
+            <span className="brand-logo-placeholder">{brand.logoText ?? brand.name.charAt(0)}</span>
           </span>
           <span className="brand-text">
-            <span className="brand-name">{lab.name}</span>
-            <span className="brand-sub">{lab.university}</span>
+            <span className="brand-name">{brand.name}</span>
+            {brand.sub && <span className="brand-sub">{brand.sub}</span>}
           </span>
         </button>
         <nav className="navbar-nav">
           {nav.map((item) => {
-            const page = pageMap[item.path];
+            const page = pathToPage(item.path);
             return (
               <button
                 key={item.path}

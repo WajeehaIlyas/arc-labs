@@ -1,0 +1,23 @@
+{
+  "person": {
+    "name": "Dr. Usama Mehmood",
+    "title": "Assistant Professor",
+    "affiliation": "Department of Computer Science, Information Technology University (ITU)",
+    "photo": "/assets/team/director.jpg",
+    "email": "usamamehmood@itu.edu.pk",
+    "bio": "I am an Assistant Professor in the Department of Computer Science at Information Technology University (ITU), Lahore, where I lead the ARC Lab. I obtained my B.S. in electrical engineering from the Lahore University of Management Sciences (LUMS) and my M.S. and Ph.D. in computer science from Stony Brook University, where I worked under the guidance of Prof. Scott A. Smolka on safety assurances for multi-agent systems. During my graduate studies I interned with the Instagram machine learning team at Facebook and the Simulink team at The MathWorks. My research develops rigorous foundations for safe and reliable autonomous and cyber-physical systems, spanning runtime assurance, autonomous vehicles and multi-agent robotics, and urban mobility and traffic simulation.",
+    "interests": ["Multi-agent Robotics", "CPS Safety", "Autonomous Vehicles", "Traffic Simulation", "Urban Mobility"],
+    "links": {
+      "labWebsite": "#",
+      "googleScholar": "#",
+      "cv": "/assets/cv.pdf"
+    }
+  },
+  "nav": [
+    { "label": "Home", "path": "/" },
+    { "label": "Publications", "path": "/publications" },
+    { "label": "Talks", "path": "/talks" },
+    { "label": "Tools", "path": "/tools" },
+    { "label": "Teaching", "path": "/teaching" }
+  ]
+}

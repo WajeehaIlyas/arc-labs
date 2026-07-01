@@ -1,0 +1,15 @@
+{
+  "courses": [
+    {
+      "id": "c1",
+      "code": null,
+      "title": null,
+      "term": null,
+      "year": null,
+      "description": null,
+      "materials": [
+        { "label": null, "type": "slides", "file": null }
+      ]
+    }
+  ]
+}

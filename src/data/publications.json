@@ -2,14 +2,298 @@
   "publications": [
     {
       "id": "pub1",
-      "title": null,
-      "authors": ["null"],
-      "venue": null,
+      "scope": "both",
+      "title": "The black-box simplex architecture for runtime assurance of multi-agent CPS",
+      "authors": [
+        "Sanaz Sheikhi",
+        "Usama Mehmood",
+        "Stanley Bak",
+        "Scott A. Smolka",
+        "Scott D. Stoller"
+      ],
+      "venue": "Innovations in Systems and Software Engineering",
+      "year": 2024,
+      "type": "journal",
+      "tags": [
+        "Runtime Assurance",
+        "Simplex Architecture",
+        "Multi-Agent Systems",
+        "Safety Critical Systems"
+      ],
+      "pdf": null,
+      "doi": "10.1007/s11334-024-00553-6",
+      "abstract": null
+    },
+    {
+      "id": "pub2",
+      "scope": "both",
+      "title": "A distributed simplex architecture for multi-agent systems",
+      "authors": [
+        "Usama Mehmood",
+        "Shouvik Roy",
+        "Amol Damare",
+        "Radu Grosu",
+        "Scott A. Smolka",
+        "Scott D. Stoller"
+      ],
+      "venue": "Journal of Systems Architecture",
+      "year": 2023,
+      "type": "journal",
+      "tags": [
+        "Runtime Assurance",
+        "Simplex Architecture",
+        "Multi-Agent Systems",
+        "Distributed Control"
+      ],
+      "pdf": null,
+      "doi": "10.1016/j.sysarc.2022.102784",
+      "abstract": null
+    },
+    {
+      "id": "pub3",
+      "scope": "both",
+      "title": "The Black-Box Simplex Architecture for Runtime Assurance of Autonomous CPS",
+      "authors": [
+        "Usama Mehmood",
+        "Sanaz Sheikhi",
+        "Stanley Bak",
+        "Scott A. Smolka",
+        "Scott D. Stoller"
+      ],
+      "venue": "NASA Formal Methods (NFM)",
+      "year": 2022,
+      "type": "conference",
+      "tags": [
+        "Runtime Assurance",
+        "Simplex Architecture",
+        "Model Predictive Control",
+        "Formal Methods"
+      ],
+      "pdf": "/assets/papers/pub3.pdf",
+      "doi": "10.1007/978-3-031-06773-0_12",
+      "abstract": "The Simplex Architecture is a runtime assurance framework where control authority may switch from an unverified and potentially unsafe advanced controller to a backup baseline controller in order to maintain the safety of an autonomous cyber-physical system. In this work, we show that runtime checks can replace the requirement to statically verify safety of the baseline controller. This is important as there are many powerful control techniques, such as model-predictive control and neural network controllers, that work well in practice but are difficult to statically verify. Since the method does not use internal information about the advanced or baseline controller, we call the approach the Black-Box Simplex Architecture. We prove the architecture is safe and present two case studies where (i) model-predictive control provides safe multi-robot coordination, and (ii) neural networks provably prevent collisions in groups of F-16 aircraft, despite the controllers occasionally outputting unsafe commands."
+    },
+    {
+      "id": "pub4",
+      "scope": "both",
+      "title": "A Distributed Simplex Architecture for Multi-agent Systems",
+      "authors": [
+        "Usama Mehmood",
+        "Scott D. Stoller",
+        "Radu Grosu",
+        "Shouvik Roy",
+        "Amol Damare",
+        "Scott A. Smolka"
+      ],
+      "venue": "Dependable Software Engineering (SETTA)",
+      "year": 2021,
+      "type": "conference",
+      "tags": [
+        "Runtime Assurance",
+        "Simplex Architecture",
+        "Multi-Agent Systems",
+        "Distributed Control"
+      ],
+      "pdf": null,
+      "doi": "10.1007/978-3-030-91265-9_13",
+      "abstract": "We present Distributed Simplex Architecture (DSA), a new runtime assurance technique that provides safety guarantees for multi-agent systems (MASs). DSA is inspired by the Simplex control architecture of Sha et al., but with some significant differences. The traditional Simplex approach is limited to single-agent systems or a MAS with a centralized control scheme. DSA addresses this limitation by extending the scope of Simplex to include MASs under distributed control. In DSA, each agent has a local instance of traditional Simplex such that the preservation of safety in the local instances implies safety for the entire MAS. We provide a proof of safety for DSA, and present experimental results for several case studies, including flocking with collision avoidance, safe navigation of ground rovers through way-points, and the safe operation of a microgrid."
+    },
+    {
+      "id": "pub5",
+      "scope": "both",
+      "title": "Collision-Free 3D Flocking Using the Distributed Simplex Architecture",
+      "authors": [
+        "Usama Mehmood",
+        "Scott D. Stoller",
+        "Radu Grosu",
+        "Scott A. Smolka"
+      ],
+      "venue": "Formal Methods in Outer Space",
+      "year": 2021,
+      "type": "conference",
+      "tags": [
+        "Runtime Assurance",
+        "Simplex Architecture",
+        "Flocking",
+        "Collision Avoidance"
+      ],
+      "pdf": null,
+      "doi": "10.1007/978-3-030-87348-6_9",
+      "abstract": null
+    },
+    {
+      "id": "pub6",
+      "scope": "both",
+      "title": "Safe CPS from unsafe controllers",
+      "authors": [
+        "Usama Mehmood",
+        "Stanley Bak",
+        "Scott A. Smolka",
+        "Scott D. Stoller"
+      ],
+      "venue": "Workshop on Computation-Aware Algorithmic Design for CPS (CAADCPS)",
+      "year": 2021,
+      "type": "conference",
+      "tags": [
+        "Runtime Assurance",
+        "Simplex Architecture",
+        "Safety Critical Systems",
+        "Model Predictive Control"
+      ],
+      "pdf": null,
+      "doi": "10.1145/3457335.3461712",
+      "abstract": "Modern cyber-physical systems (CPS) interact with the physical world, hence their correctness is important. In this work, we build upon the Simplex Architecture, where control authority may switch from an unverified and potentially unsafe advanced controller to a verified-safe baseline controller in order to maintain system safety. We take the approach further by lifting the requirement that the baseline controller must be verified or even correct, instead also treating it as a black-box component. This change is important; there are many types of powerful control techniques---model predictive control and neural network controllers---that often work well in practice, but are unlikely to be formally proven correct due to complexity. We prove such an architecture maintains safety, and present case studies where model-predictive control provides safety for multi-robot coordination, and unverified neural networks provably prevent collisions for groups of F-16 aircraft."
+    },
+    {
+      "id": "pub7",
+      "scope": "both",
+      "title": "Distributed Control for Flocking Maneuvers via Acceleration-Weighted Neighborhooding",
+      "authors": [
+        "Shouvik Roy",
+        "Usama Mehmood",
+        "Radu Grosu",
+        "Scott A. Smolka",
+        "Scott D. Stoller",
+        "Ashish Tiwari"
+      ],
+      "venue": "American Control Conference (ACC)",
+      "year": 2021,
+      "type": "conference",
+      "tags": [
+        "Distributed Control",
+        "Model Predictive Control",
+        "Flocking",
+        "Multi-Agent Systems"
+      ],
+      "pdf": null,
+      "doi": "10.23919/ACC50511.2021.9483155",
+      "abstract": "We introduce the concept of Distributed Model Predictive Control (DMPC) with Acceleration-Weighted Neighborhooding (AWN) in order to synthesize a distributed and symmetric controller for high-speed flocking maneuvers (angu-lar turns in general). Acceleration-Weighted Neighborhooding exploits the imbalance in agent accelerations during a turning maneuver to ensure that actively turning agents are prioritized. We show that with our approach, a flocking maneuver can be achieved without it being a global objective. Only a small subset of the agents, called initiators, need to be aware of the maneuver objective. Our AWN-DMPC controller ensures this local information is propagated throughout the flock in a scale-free manner with linear delays. Our experimental evaluation conclusively demonstrates the maneuvering capabilities of a distributed flocking controller based on AWN-DMPC."
+    },
+    {
+      "id": "pub8",
+      "scope": "both",
+      "title": "Learning Distributed Controllers for V-Formation",
+      "authors": [
+        "Shouvik Roy",
+        "Usama Mehmood",
+        "Radu Grosu",
+        "Scott A. Smolka",
+        "Scott D. Stoller",
+        "Ashish Tiwari"
+      ],
+      "venue": "IEEE Intl. Conf. on Autonomic Computing and Self-Organizing Systems (ACSOS)",
+      "year": 2020,
+      "type": "conference",
+      "tags": [
+        "Machine Learning",
+        "Distributed Control",
+        "V-Formation",
+        "Model Predictive Control"
+      ],
+      "pdf": "/assets/papers/pub8.pdf",
+      "doi": "10.1109/ACSOS49614.2020.00033",
+      "abstract": "We show how a high-performing, fully distributed and symmetric neural V-formation controller can be synthesized from a Centralized MPC (Model Predictive Control) controller using Deep Learning. This result is significant as we also establish that under very reasonable conditions, it is impossible to achieve V-formation using a deterministic, distributed, and symmetric controller. The learning process we use for the neural V-formation controller is significantly enhanced by CEGkR, a CounterexampleGuided k-fold Retraining technique we introduce, which extends prior work in this direction in important ways. Our experimental results show that our neural V-formation controller generalizes to a significantly larger number of agents than for which it was trained (from 7 to 15), and exhibits substantial speedup over the MPC-based controller. We use a form of statistical model checking to compute confidence intervals for our neural Vformation controller’s convergence rate and time to convergence."
+    },
+    {
+      "id": "pub9",
+      "scope": "both",
+      "title": "Neural Flocking: MPC-Based Supervised Learning of Flocking Controllers",
+      "authors": [
+        "Usama Mehmood",
+        "Shouvik Roy",
+        "Radu Grosu",
+        "Scott A. Smolka",
+        "Scott D. Stoller",
+        "Ashish Tiwari"
+      ],
+      "venue": "Foundations of Software Science and Computation Structures (FoSSaCS)",
+      "year": 2020,
+      "type": "conference",
+      "tags": [
+        "Machine Learning",
+        "Model Predictive Control",
+        "Flocking",
+        "Distributed Control"
+      ],
+      "pdf": "/assets/papers/pub9.pdf",
+      "doi": "10.1007/978-3-030-45231-5_1",
+      "abstract": "We show how a symmetric and fully distributed flocking controller can be synthesized using Deep Learning from a centralized flocking controller. Our approach is based on Supervised Learning, with the centralized controller providing the training data, in the form of trajectories of state-action pairs. We use Model Predictive Control (MPC) for the centralized controller, an approach that we have successfully demonstrated on flocking problems. MPC-based flocking controllers are high-performing but also computationally expensive. By learning a symmetric and distributed neural flocking controller from a centralized MPC-based one, we achieve the best of both worlds: the neural controllers have high performance (on par with the MPC controllers) and high efficiency. Our experimental results demonstrate the sophisticated nature of the distributed controllers we learn. In particular, the neural controllers are capable of achieving myriad flocking-oriented control objectives, including flocking formation, collision avoidance, obstacle avoidance, predator avoidance, and target seeking. Moreover, they generalize the behavior seen in the training data to achieve these objectives in a significantly broader range of scenarios. In terms of verification of our neural flocking controller, we use a form of statistical model checking to compute confidence intervals for its convergence rate and time to convergence."
+    },
+    {
+      "id": "pub10",
+      "scope": "both",
+      "title": "Declarative vs rule-based control for flocking dynamics",
+      "authors": [
+        "Usama Mehmood",
+        "Nicola Paoletti",
+        "Dung Phan",
+        "Radu Grosu",
+        "Shan Lin",
+        "Scott D. Stoller",
+        "Ashish Tiwari",
+        "Junxing Yang",
+        "Scott A. Smolka"
+      ],
+      "venue": "ACM Symposium on Applied Computing (SAC)",
+      "year": 2018,
+      "type": "conference",
+      "tags": [
+        "Model Predictive Control",
+        "Flocking",
+        "Multi-Agent Systems",
+        "Control Theory"
+      ],
+      "pdf": "/assets/papers/pub10.pdf",
+      "doi": "10.1145/3167132.3167222",
+      "abstract": "The popularity of rule-based flocking models, such as Reynolds classic flocking model, raises the question of whether more declarative flocking models are possible. This question is motivated by the observation that declarative models are generally simpler and easier to design, understand, and analyze than operational models. We introduce a very simple control law for flocking based on a cost function capturing cohesion (agents want to stay together) and separation (agents do not want to get too close). We refer to it as declarative flocking (DF). We use model-predictive control (MPC) to define controllers for DF in centralized and distributed settings. A thorough performance comparison of our DF-based approach with Reynolds model, and with more recent flocking models that use MPC with a cost function based on lattice structures, demonstrate that DF-MPC yields the best cohesion and least fragmentation, and maintains a surprisingly good level of geometric regularity while still producing natural flock shapes similar to those produced by Reynolds model. We also show that DF-MPC has high resilience to sensor noise."
+    },
+    {
+      "id": "pub11",
+      "scope": "personal",
+      "title": "Urdu Sentential Paraphrased Plagiarism Detection Using Large Language Models",
+      "authors": [
+        "Hafiz Rizwan Iqbal",
+        "Muhammad Sharjeel",
+        "Jawad Shafi",
+        "Usama Mehmood",
+        "Agha Ali Raza"
+      ],
+      "venue": "ACM Transactions on Asian and Low-Resource Language Information Processing",
       "year": 2025,
-      "type": null,
-      "tags": null,
-      "pdf": "/assets/papers/pub1.pdf",
-      "doi": null,
+      "type": "journal",
+      "tags": [
+        "Natural Language Processing",
+        "Large Language Models",
+        "Plagiarism Detection",
+        "Deep Learning"
+      ],
+      "pdf": null,
+      "doi": "10.1145/3748320",
+      "abstract": "Plagiarism, the unauthorized reuse of text, fueled by the ease of access to online content, is a pressing concern for academia, publishers, and authors. Paraphrasing, a common tactic in textual plagiarism, compounds the problem further. The automatic detection of paraphrased plagiarism in text documents is a fundamental task in Natural Language Processing (NLP), crucial for maintaining academic integrity and authenticity. This article presents an extensive investigation into Urdu sentential paraphrased plagiarism detection leveraging advanced Deep Neural Networks (DNNs) and Large Language Models (LLMs). The study builds upon the foundational work and proposes modifications to the Deep Text Reuse and Paraphrased Plagiarism Detection (D-TRaPPD) architecture to incorporate state-of-the-art pre-trained LLMs. The proposed approach, SELLM-D-TRaPPD, integrates various language models, including contextualized sentence embedding-based LLMs, language-agnostic and multilingual transformer-based LLMs, and multilingual knowledge-distilled transformer-based LLMs. We evaluated these models against three benchmark Urdu sentential paraphrase corpora—Urdu Sentential Paraphrase Corpus, Urdu Short Text Reuse Corpus, and Semi-automatic Urdu Sentential Paraphrase Corpus. The results demonstrate the effectiveness of SELLM-D-TRaPPD with LLMs, achieving F1 scores of 92.09%, 96.70%, and 98.23%, respectively. A comparative analysis with existing state-of-the-art methods shows significant performance improvements, establishing SELLM-D-TRaPPD as the new leading approach for Urdu sentential paraphrased plagiarism detection. These findings highlight the value of leveraging advanced neural network architectures and pre-trained LLMs in improving the accuracy and effectiveness of paraphrased plagiarism detection in Urdu, addressing a crucial gap in Urdu NLP research."
+    },
+    {
+      "id": "pub12",
+      "scope": "personal",
+      "title": "Urdu paraphrased text reuse and plagiarism detection using pre-trained large language models and deep hybrid neural networks",
+      "authors": [
+        "Hafiz Rizwan Iqbal",
+        "Muhammad Sharjeel",
+        "Jawad Shafi",
+        "Usama Mehmood",
+        "Saeed Ul Hassan",
+        "Agha Ali Raza"
+      ],
+      "venue": "Multimedia Tools and Applications",
+      "year": 2025,
+      "type": "journal",
+      "tags": [
+        "Natural Language Processing",
+        "Large Language Models",
+        "Plagiarism Detection",
+        "Deep Learning"
+      ],
+      "pdf": null,
+      "doi": "10.1007/s11042-025-20862-7",
       "abstract": null
     }
   ]

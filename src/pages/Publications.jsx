@@ -1,14 +1,25 @@
 import { useState } from "react";
 import pubData from "../data/publications.json";
+import { SITE } from "../site";
+
+// Publications are a single shared dataset. Each entry's `scope` ("lab",
+// "personal", or "both") decides which site(s) it appears on; a missing scope
+// is treated as "both" so older entries still show everywhere.
+const inScope = (p) => (p.scope ?? "both") === "both" || p.scope === SITE;
+const scopedPubs = pubData.publications.filter(inScope);
+
+// Per-publication tag chips are populated in the data but hidden for now.
+// Flip to true to display them under each entry.
+const SHOW_TAGS = false;
 
 const ALL_TYPES = ["All", "Journal", "Conference"];
-const YEARS = ["All", ...Array.from(new Set(pubData.publications.map(p => p.year))).sort((a,b)=>b-a).map(String)];
+const YEARS = ["All", ...Array.from(new Set(scopedPubs.map(p => p.year))).sort((a,b)=>b-a).map(String)];
 
 export default function Publications() {
   const [typeFilter, setTypeFilter] = useState("All");
   const [yearFilter, setYearFilter] = useState("All");
 
-  const filtered = pubData.publications.filter((p) => {
+  const filtered = scopedPubs.filter((p) => {
     const typeMatch = typeFilter === "All" || p.type === typeFilter.toLowerCase();
     const yearMatch = yearFilter === "All" || String(p.year) === yearFilter;
     return typeMatch && yearMatch;
@@ -89,17 +100,24 @@ function PubEntry({ pub }) {
         <p className="pub-venue">
           <em>{pub.venue}</em>, {pub.year}
         </p>
+        {SHOW_TAGS && pub.tags?.length > 0 && (
+          <div className="pub-tags">
+            {pub.tags.map((t) => (
+              <span key={t} className="project-tag">{t}</span>
+            ))}
+          </div>
+        )}
         <div className="pub-actions">
+          {pub.abstract && (
+            <button className="pub-action-link" onClick={() => setShowAbstract(!showAbstract)}>
+              [{showAbstract ? "Hide Abstract" : "Abstract"}]
+            </button>
+          )}
           {pub.pdf && (
             <a href={pub.pdf} className="pub-action-link" target="_blank" rel="noreferrer">[PDF]</a>
           )}
           {pub.doi && (
             <a href={`https://doi.org/${pub.doi}`} className="pub-action-link" target="_blank" rel="noreferrer">[DOI]</a>
-          )}
-          {pub.abstract && (
-            <button className="pub-action-link" onClick={() => setShowAbstract(!showAbstract)}>
-              [{showAbstract ? "Hide Abstract" : "Abstract"}]
-            </button>
           )}
         </div>
         {showAbstract && pub.abstract && (

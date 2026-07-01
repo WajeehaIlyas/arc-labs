@@ -1,14 +1,20 @@
 {
   "pi": {
     "name": "Dr. Usama Mehmood",
-    "title": "null",
-    "role": "null",
-    "bio": "Prof. Director leads the ARC Lab and holds an associate professorship in the Department of Computer Science. His research interests include formal methods, autonomous robotics and control theory.",
+    "title": "Assistant Professor & Lab Director",
+    "role": "Assistant Professor & Lab Director",
+    "degrees": [
+      { "degree": "PhD", "institution": "Stony Brook University", "year": 2021 },
+      { "degree": "MS", "institution": "Stony Brook University", "year": 2019 },
+      { "degree": "BS", "institution": "Lahore University of Management Sciences (LUMS)", "year": 2014 }
+    ],
+    "bio": "Usama Mehmood is an Assistant Professor in the Department of Computer Science at Information Technology University (ITU), Lahore, where he leads the ARC Lab. He obtained his B.S. in electrical engineering from the Lahore University of Management Sciences (LUMS) and his M.S. and Ph.D. in computer science from Stony Brook University, where he worked under the guidance of Prof. Scott A. Smolka on safety assurances for multi-agent systems. During his graduate studies he interned with the Instagram machine learning team at Facebook and the Simulink team at The MathWorks. His research develops rigorous foundations for safe and reliable autonomous and cyber-physical systems, spanning runtime assurance, autonomous vehicles and multi-agent robotics, and urban mobility and traffic simulation.",
     "email": "usamamehmood@itu.edu.pk",
     "photo": "/assets/team/director.jpg",
+    "cv": "/assets/cv.pdf",
     "website": "#",
-    "googleScholar": "#",
-    "interests": ["Formal Methods", "Control Theory", "Robotics"]
+    "googleScholar": "https://scholar.google.com/citations?user=DJK9-ewAAAAJ&hl=en",
+    "interests": ["Multi-agent Robotics", "Safety Assurance for Cyber-Physical Systems", "Autonomous Vehicles"]
   },
   "members": [
     {
